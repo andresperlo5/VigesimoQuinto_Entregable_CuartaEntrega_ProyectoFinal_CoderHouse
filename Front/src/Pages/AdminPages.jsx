@@ -83,7 +83,7 @@ function AdminPages() {
                 <div className='d-flex justify-content-around'>
                     <div className='d-flex justify-content-around'>
                         <div>
-                            <button type="button" class="btn btn-primary" id={p._id} data-bs-toggle="modal" data-bs-target="#exampleModal1" onClick={handleSubmitEdit}>
+                            <button type="button" class="btn btn-primary" id={p._id ? p._id : p.id} data-bs-toggle="modal" data-bs-target="#exampleModal1" onClick={handleSubmitEdit}>
                                 Editar
                             </button>
 

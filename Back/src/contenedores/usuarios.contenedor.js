@@ -50,7 +50,7 @@ class ContenedorUsersMongoAtlas {
             return userAll
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -61,7 +61,7 @@ class ContenedorUsersMongoAtlas {
 
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -72,7 +72,7 @@ class ContenedorUsersMongoAtlas {
             return oneUser
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -84,7 +84,7 @@ class ContenedorUsersMongoAtlas {
 
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -95,7 +95,7 @@ class ContenedorUsersMongoAtlas {
 
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -107,7 +107,7 @@ class ContenedorUsersMongoAtlas {
 
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -118,7 +118,7 @@ class ContenedorUsersMongoAtlas {
 
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -129,7 +129,7 @@ class ContenedorUsersMongoAtlas {
             return userLogin
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -139,7 +139,7 @@ class ContenedorUsersMongoAtlas {
             return LogUs
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -148,7 +148,7 @@ class ContenedorUsersMongoAtlas {
             await this.userModel.findByIdAndUpdate(id, { foto: fotOavatar }, { new: true })
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 }

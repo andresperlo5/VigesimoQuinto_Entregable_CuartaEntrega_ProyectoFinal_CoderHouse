@@ -52,3 +52,55 @@
     at param (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\index.js:354:14)
     at param (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\index.js:365:14)
     at Function.process_params (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\index.js:410:3)
+[2022-03-13T06:55:11.014] [ERROR] file - ReferenceError: res is not defined
+    at UsuariosDaosFirebase.findOneId (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\contenedores\usuarios.contenedores.Firebase.js:72:13)
+    at exports.ImageUpload (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\controllers\usuarios.controllers.js:137:43)
+[2022-03-13T10:01:30.729] [ERROR] file - ReferenceError: res is not defined
+    at UsuariosDAOMongoDB.findOneId (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\contenedores\usuarios.contenedor.js:64:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async exports.GetOneUser (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\controllers\usuarios.controllers.js:249:25)
+[2022-03-13T10:01:33.434] [ERROR] file - TokenExpiredError: jwt expired
+    at C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\jsonwebtoken\verify.js:152:21
+    at getSecret (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\jsonwebtoken\verify.js:94:10)
+    at C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\middlewars\auth.js:21:31
+    at Layer.handle [as handle_request] (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\index.js:335:12) {
+  expiredAt: 2022-03-13T11:10:26.000Z
+}
+[2022-03-13T10:14:11.704] [ERROR] file - ReferenceError: res is not defined
+    at UsuariosDAOMongoDB.findOneId (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\contenedores\usuarios.contenedor.js:64:13)
+    at async exports.GetOneUser (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\controllers\usuarios.controllers.js:249:25)
+[2022-03-13T10:14:13.792] [ERROR] file - ReferenceError: res is not defined
+    at UsuariosDAOMongoDB.findOneId (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\contenedores\usuarios.contenedor.js:64:13)
+    at async exports.GetOneUser (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\controllers\usuarios.controllers.js:249:25)
+[2022-03-13T10:14:23.368] [ERROR] file - ReferenceError: res is not defined
+    at UsuariosDAOMongoDB.findOneId (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\contenedores\usuarios.contenedor.js:64:13)
+    at async exports.GetOneUser (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\controllers\usuarios.controllers.js:249:25)
+[2022-03-13T11:04:37.375] [ERROR] file - TypeError: Cannot read property 'path' of undefined
+    at exports.ImageUpload (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\controllers\usuarios.controllers.js:134:67)
+    at Layer.handle [as handle_request] (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\route.js:137:13)
+    at Array.<anonymous> (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\multer\lib\make-middleware.js:53:37)
+    at listener (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\on-finished\index.js:169:15)
+    at onFinish (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\on-finished\index.js:100:5)
+    at callback (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\ee-first\index.js:55:10)
+    at IncomingMessage.onevent (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\ee-first\index.js:93:5)
+    at IncomingMessage.emit (events.js:327:22)
+    at endReadableNT (_stream_readable.js:1327:12)
+[2022-03-13T11:08:13.113] [ERROR] file - TypeError: Cannot read property 'path' of undefined
+    at exports.ImageUpload (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\src\controllers\usuarios.controllers.js:134:67)
+    at Layer.handle [as handle_request] (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\express\lib\router\route.js:137:13)
+    at Array.<anonymous> (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\multer\lib\make-middleware.js:53:37)
+    at listener (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\on-finished\index.js:169:15)
+    at onFinish (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\on-finished\index.js:100:5)
+    at callback (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\ee-first\index.js:55:10)
+    at IncomingMessage.onevent (C:\Users\Usuario\Desktop\CoderHouse Andres\Entregables\Entregables Obligatorios\Proyecto Final CoderHouse\Cuarta Entrega Proyecto Final\Back\node_modules\ee-first\index.js:93:5)
+    at IncomingMessage.emit (events.js:327:22)
+    at endReadableNT (_stream_readable.js:1327:12)

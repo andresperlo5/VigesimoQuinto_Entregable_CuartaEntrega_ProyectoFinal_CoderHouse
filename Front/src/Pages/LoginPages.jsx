@@ -29,7 +29,7 @@ function LoginPages() {
                 <p className="card-text">{`Marca: ${p.descripcion}`}</p>
                 <p className="card-text">{`Precio: ${p.precio}`}</p>
                 <div className='d-flex justify-content-around'>
-                    <a href={`/producto/${p.id}`} className="btn btn-primary">Ver Mas</a>
+                    <a href={`/producto/${p.id ? p.id : p._id}`} className="btn btn-primary">Ver Mas</a>
                     <a href="#" className="btn btn-warning" id={p.id ? p.id : p._id} onClick={handleSubmitCarrito}>Agregar Al Carrito</a>
                 </div>
             </div>

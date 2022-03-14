@@ -106,12 +106,12 @@ passport.use('local-login', new LocalStrategy({
 
     const userLogin = await usuariosDao.findOneUser({ usuario });
     if (!userLogin) {
-        return done({ msg: 'Usuario y/o Contraseña Incorrectos1' }, false)
+        return done({ msg: 'Usuario y/o Contraseña Incorrectos' }, false)
     }
 
     const passCheck = await bcryptjs.compare(contrasenia, userLogin.contrasenia);
     if (!passCheck) {
-        return done({ msg: 'Usuario y/o Contraseña Incorrectos2' }, false)
+        return done({ msg: 'Usuario y/o Contraseña Incorrectos' }, false)
     }
 
     const jwt_payload = {
@@ -154,6 +154,8 @@ exports.ImageUpload = async (req, res) => {
 
     } catch (error) {
         logger.error(error)
+        await usuariosDao.DeleteOneUser(id)
+        res.status(500).json(error)
     }
 }
 
@@ -174,7 +176,7 @@ exports.recoveyPass = async (req, res) => {
     const searchUserEmail = await usuariosDao.findOneUser(req.body)
     console.log('searchUserEmail', searchUserEmail)
     const { _id, id, usuario } = searchUserEmail
-    const tokenRecovery = jwt.sign( _id ? _id : id , process.env.JWT_SECRET)
+    const tokenRecovery = jwt.sign(_id ? _id : id, process.env.JWT_SECRET)
 
     const mailContent = {
         email: usuario,
@@ -202,7 +204,7 @@ exports.responseRecoveryPass = async (req, res) => {
         if (resetLink) {
             jwt.verify(resetLink, process.env.JWT_SECRET, async function (error, decodedData) {
 
-                const userExists = await usuariosDao.findOneId({ _id: decodedData._id ? decodedData._id : decodedData})
+                const userExists = await usuariosDao.findOneId({ _id: decodedData._id ? decodedData._id : decodedData })
                 if (error || !userExists) {
                     return res.status(400).json({ error: 'usuario y/o contraseña incorrectos' })
                 }
@@ -211,7 +213,7 @@ exports.responseRecoveryPass = async (req, res) => {
                 const encryptedPass = await bcryptjs.hash(contrasenia, salt);
                 userExists.contrasenia = encryptedPass
 
-                let saveNewPass = await usuariosDao.ModifyOneUser(userExists._id ? userExists._id  : userExists.id , userExists)
+                let saveNewPass = await usuariosDao.ModifyOneUser(userExists._id ? userExists._id : userExists.id, userExists)
 
                 if (!saveNewPass) {
                     return res.status(400).json({ error: 'Error al Blanquear la Contraseña' })

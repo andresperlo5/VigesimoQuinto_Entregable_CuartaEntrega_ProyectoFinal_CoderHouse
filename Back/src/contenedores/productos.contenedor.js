@@ -25,7 +25,7 @@ class ContenedorMongoAtlas {
             return productsAll
         } catch (error) {
            logger.error(error)
-           res.status(500).json(error)
+           return error
         }
     }
 
@@ -35,7 +35,7 @@ class ContenedorMongoAtlas {
             return oneProduct
         } catch (error) {
            logger.error(error)
-           res.status(500).json(error)
+           return error
         }
     }
 
@@ -47,7 +47,7 @@ class ContenedorMongoAtlas {
             return newProduct
         } catch (error) {
            logger.error(error)
-           res.status(500).json(error)
+           return error
         }
     }
 
@@ -58,7 +58,7 @@ class ContenedorMongoAtlas {
 
         } catch (error) {
            logger.error(error)
-           res.status(500).json(error)
+           return error
         }
     }
 
@@ -68,7 +68,7 @@ class ContenedorMongoAtlas {
             return deleteProd
         } catch (error) {
            logger.error(error)
-           res.status(500).json(error)
+           return error
         }
     }
 }

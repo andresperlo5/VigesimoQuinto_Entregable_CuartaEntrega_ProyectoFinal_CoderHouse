@@ -14,8 +14,7 @@ function ProductoIdPages() {
     }
 
     const handleSubmitCarrito = async (e) => {
-        const idProd = e.target.id
-        const res = await axios.post(`http://localhost:3001/api/v1/carritos/${idCart}/productos/${idProd}`)
+        const res = await axios.post(`http://localhost:3001/api/v1/carritos/${idCart}/productos/${params.id}`)
     }
 
     useEffect(() => {
@@ -31,7 +30,7 @@ function ProductoIdPages() {
                 <p className="card-text">{`Precio: ${product.precio}`}</p>
                 <div className='d-flex justify-content-around'>
                    
-                    <a href="#" className="btn btn-warning" id={product.id ? product.id : product._id} onClick={handleSubmitCarrito}>Agregar Al Carrito</a>
+                    <a href="#" className="btn btn-warning" onClick={handleSubmitCarrito}>Agregar Al Carrito</a>
                 </div>
             </div>
         </div>

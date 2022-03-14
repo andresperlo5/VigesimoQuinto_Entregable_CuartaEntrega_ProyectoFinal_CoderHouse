@@ -58,18 +58,18 @@ class ContenedorUsuariosFirebase {
             return res
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
     async findOneId(id) {
         try {
-            const oneUser = (await this.collections.doc(id?._id).get()).data();
+            const oneUser = (await this.collections.doc(id._id ? id._id : id).get()).data();
             return oneUser
 
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -90,7 +90,7 @@ class ContenedorUsuariosFirebase {
             return users
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -103,7 +103,7 @@ class ContenedorUsuariosFirebase {
             return newUser
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -114,7 +114,7 @@ class ContenedorUsuariosFirebase {
             return modifyUser
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -137,7 +137,7 @@ class ContenedorUsuariosFirebase {
             return userUpdte
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -147,7 +147,7 @@ class ContenedorUsuariosFirebase {
             return deleteUser
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -169,7 +169,7 @@ class ContenedorUsuariosFirebase {
 
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -205,7 +205,7 @@ class ContenedorUsuariosFirebase {
             return userupdateLogout
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -231,7 +231,7 @@ class ContenedorUsuariosFirebase {
 
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 }

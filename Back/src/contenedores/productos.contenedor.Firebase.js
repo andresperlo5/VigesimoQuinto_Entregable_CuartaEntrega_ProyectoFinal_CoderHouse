@@ -39,7 +39,7 @@ class ContenedorCarritosFirebase {
             return res
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -49,7 +49,7 @@ class ContenedorCarritosFirebase {
             return oneProd
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
  
@@ -69,7 +69,7 @@ class ContenedorCarritosFirebase {
             return newProd
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -79,7 +79,7 @@ class ContenedorCarritosFirebase {
             return modifyProd
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -89,7 +89,7 @@ class ContenedorCarritosFirebase {
             return delProd
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 }

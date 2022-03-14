@@ -12,7 +12,6 @@ function NavbarHome() {
     const [usuario, setUsuario] = useState('')
     const [contrasenia, setContrasenia] = useState('')
     const [isLoading, setIsLoading] = useState(false)
-    const [modal, setModal] = useState(false)
 
     const wrapperRef = useRef(null)
     const [previewImage, setPreviewImage] = useState('')
@@ -41,6 +40,19 @@ function NavbarHome() {
     const handleSubmitReg = async (e) => {
         e.preventDefault()
         setIsLoading(true)
+
+        if (image === null) {
+            setTimeout(() => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...Error',
+                    text: 'Campo imagen obligatorio',
+                })
+            }, 1000);
+            setIsLoading(false)
+            return
+        }
+
         const res = await axios.post('http://localhost:3001/api/v1/usuarios/register', { nombre, direccion, edad, telefono, usuario, contrasenia })
         let reSetData = res.data.userData.admin
 
@@ -67,15 +79,21 @@ function NavbarHome() {
     const handleSubmitLogin = async (e) => {
         e.preventDefault()
         setIsLoading(true)
+        console.log('antes del axios')
         const res = await axios.post('http://localhost:3001/api/v1/usuarios/login', { usuario, contrasenia })
-        if (res.data.msg) {
+        if (res.data.err) {
             setIsLoading(false)
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...Error',
-                text: res.data.msg,
+                text: res.data.err.msg,
             })
         } else {
+            Swal.fire(
+                'Loguado correctamente!',
+                'Ingresando...',
+                'success'
+            )
             localStorage.setItem('idUser', res.data.userLogin.id ? res.data.userLogin.id : res.data.userLogin._id)
             localStorage.setItem('idCart', res.data.userLogin.carritoID)
             localStorage.setItem('admin', res.data.userLogin.admin)
@@ -191,6 +209,7 @@ function NavbarHome() {
 
                                                         <div className="form-group d-none">
                                                             <input
+                                                                required
                                                                 type="file"
                                                                 className="form-control-file"
                                                                 name='file'
@@ -231,11 +250,11 @@ function NavbarHome() {
                                             <div className='d-flex justify-content-around'>
                                                 <div class="mb-3">
                                                     <label for="exampleInputEmail1b" class="form-label">Edad</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1b" aria-describedby="emailHelp" onChange={(e) => { setEdad(e.target.value) }} required />
+                                                    <input type="number" class="form-control" id="exampleInputEmail1b" aria-describedby="emailHelp" onChange={(e) => { setEdad(e.target.value) }} required />
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="exampleInputEmail1b" class="form-label">Telefono</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1b" aria-describedby="emailHelp" onChange={(e) => { setTelefono(e.target.value) }} required />
+                                                    <input type="number" class="form-control" id="exampleInputEmail1b" aria-describedby="emailHelp" onChange={(e) => { setTelefono(e.target.value) }} required />
                                                 </div>
                                             </div>
                                             <div className='d-flex justify-content-around'>

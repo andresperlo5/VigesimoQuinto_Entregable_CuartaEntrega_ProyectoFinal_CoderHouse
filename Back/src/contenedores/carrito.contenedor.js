@@ -24,7 +24,7 @@ class ContenedorCartMongoAtlas {
             return cartsAll
         } catch (error) {
             logger.error(error)
-            res.status(500).json(error)
+            return error
         }
     }
 
@@ -34,7 +34,7 @@ class ContenedorCartMongoAtlas {
             return oneCart
         } catch (error) {
              logger.error(error)
-             res.status(500).json(error)
+             return error
         }
     }
 
@@ -45,7 +45,7 @@ class ContenedorCartMongoAtlas {
             return newCart
         } catch (error) {
              logger.error(error)
-             res.status(500).json(error)
+             return error
 
         }
     }
@@ -56,7 +56,7 @@ class ContenedorCartMongoAtlas {
             return modifyCart
         } catch (error) {
              logger.error(error)
-             res.status(500).json(error)
+             return error
         }
     }
 
@@ -66,7 +66,7 @@ class ContenedorCartMongoAtlas {
             return deleteCart
         } catch (error) {
              logger.error(error)
-             res.status(500).json(error)
+             return error
 
         }
     }
@@ -77,7 +77,7 @@ class ContenedorCartMongoAtlas {
             return cartEnc
         } catch (error) {
              logger.error(error)
-             res.status(500).json(error)
+             return error
         }
     }
 }

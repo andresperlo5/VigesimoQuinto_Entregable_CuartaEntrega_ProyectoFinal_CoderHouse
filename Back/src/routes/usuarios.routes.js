@@ -20,7 +20,7 @@ router.post('/register', function (req, res, next) {
 router.post('/login', function (req, res, next) {
     passport.authenticate('local-login', function (err, user, info) {
         if (err) {
-            res.status(400).json(err)
+            return res.status(200).json({ err })
         } else {
             res.status(200).json({ userLogin: user })
         }

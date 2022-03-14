@@ -77,8 +77,11 @@ exports.DeleteOneCartAndProducts = async (req, res) => {
 exports.addProductinTheCart = async (req, res) => {
     try {
         const idCart = req.params.id
+        console.log('idCart', idCart)
         const idProd = req.params.idProd
+        console.log('idProd', idProd)
         const cartEnc = await carritosDao.findOneId(idCart)
+        console.log('cartEncAdd', cartEnc)
         const prodEnc = await productosDao.findOneId(idProd)
         cartEnc.producto.push(prodEnc)
         const CartG = carritosDao.SaveCart(cartEnc, idCart, idProd)

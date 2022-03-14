@@ -35,8 +35,8 @@ class ContenedorCarritosFirebase {
             })
             return res
         } catch (error) {
-           logger.error(error)
-           res.status(500).json(error)
+            logger.error(error)
+            return error
         }
     }
 
@@ -45,8 +45,8 @@ class ContenedorCarritosFirebase {
             const oneCart = (await this.collections.doc(id).get()).data();
             return oneCart
         } catch (error) {
-           logger.error(error)
-           res.status(500).json(error)
+            logger.error(error)
+            return error
         }
     }
 
@@ -60,8 +60,8 @@ class ContenedorCarritosFirebase {
             return newCarts
 
         } catch (error) {
-           logger.error(error)
-           res.status(500).json(error)
+            logger.error(error)
+            return error
         }
     }
 
@@ -70,8 +70,8 @@ class ContenedorCarritosFirebase {
             const modifyCart = await this.collections.doc(id).set(body);
             return modifyCart
         } catch (error) {
-           logger.error(error)
-           res.status(500).json(error)
+            logger.error(error)
+            return error
         }
     }
 
@@ -81,19 +81,20 @@ class ContenedorCarritosFirebase {
             return delCart
 
         } catch (error) {
-           logger.error(error)
-           res.status(500).json(error)
+            logger.error(error)
+            return error
         }
     }
 
-    async SaveCart(cartEnc, idCart, idProd) {
+    async SaveCart(cartEnc, idCart) {
+        console.log('cartEnc', cartEnc)
         try {
-           const saveCart = await this.collections.doc(idCart).set(cartEnc);
-            return saveCart 
+            const saveCart = await this.collections.doc(idCart).set(cartEnc);
+            return saveCart
 
         } catch (error) {
-           logger.error(error)
-           res.status(500).json(error)
+            logger.error(error)
+            return error
         }
     }
 
